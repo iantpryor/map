@@ -10,3 +10,8 @@ canvas {
   width: 960px;
   height: 540px;
 }
+div {
+  display: block;
+  margin-left: auto;
+  marign-right: auto;
+}
