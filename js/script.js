@@ -8,7 +8,7 @@
     ctx.fillStyle = "#FF0000";
     for(x=0; x<100; x+2){
       for(y=0; y< 100; y+2){
-        ctx.fillRect(x, y, 1, 1)
+        ctx.fillRect(x, y, 1, 1);
       }
     }
   }
