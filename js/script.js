@@ -7,9 +7,7 @@
     var a = 255;
     var c = document.getElementById("mapCanvas");
     var ctx = c.getContext("2d");
-    ctx.clearRect(0, 0, 960, 540);
-    
-    ctx.fillStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
-    
+    ctx.fillStyle = "#FF0000";
     ctx.fillRect(0,0,50,50);
+    
 })(window, document, undefined);
