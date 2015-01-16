@@ -6,6 +6,10 @@
     c.height = 540;
     var ctx = c.getContext("2d");
     ctx.fillStyle = "#FF0000";
-    ctx.fillRect(10,10,50,50);
+    for(x=0; x<100; x++){
+      for(y=0; y< 100; y++){
+        ctx.fillRect(x, y, 1, 1)
+      }
+    }
   }
 })(window, document, undefined);
