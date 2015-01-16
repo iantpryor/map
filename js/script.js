@@ -1,17 +1,18 @@
 (function(window, document, undefined){
   window.onload = init;
   function init(){
+    var r = 255;
+    var g = 255;
+    var b = 255;
+    var a = 255;
     var c = document.getElementById("mapCanvas");
     var ctx = c.getContext("2d");
-    var id = ctx.createImageData(1,1);
-    var d = id.data;
-    d[0] = 255;
-    d[1] = 255;
-    d[2] = 255;
-    d[3] = 255;
-    for(x=0; x<50; x++){
-      for(y=0; y<50; y++){
-        ctx.putImageData(id, x, y);
+    ctx.clearRect(0, 0, 960, 540);
+    
+    ctx.fillStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
+    for(x=0; x<100; x++){
+      for(y=0; y<100: y++){
+        ctx.fillRect(x,y,1,1);
       }
     }
 })(window, document, undefined);
