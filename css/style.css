@@ -4,6 +4,7 @@
 }
 body {
   background-color: #FFFFFF;
+  position: relative;
 }
 canvas {
   border: 1px solid #000000;
@@ -12,6 +13,7 @@ canvas {
 }
 div {
   display: block;
+  position: absolute;
   margin-left: auto;
   marign-right: auto;
 }
