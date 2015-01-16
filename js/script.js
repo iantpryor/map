@@ -10,9 +10,6 @@
     ctx.clearRect(0, 0, 960, 540);
     
     ctx.fillStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
-    for(x=0; x<100; x++){
-      for(y=0; y<100: y++){
-        ctx.fillRect(x,y,1,1);
-      }
-    }
+    
+    ctx.fillRect(0,0,50,50);
 })(window, document, undefined);
