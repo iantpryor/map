@@ -8,7 +8,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
         var myTimer;
-        var blockSize = 10;
+        var blockSize = 2;
     
         // set the dynamic outside the loop
         var it1 = -1;
@@ -43,7 +43,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
     
             // draw
             c.beginPath();
-            c.fillRect(x, y, 9, 9);
+            c.fillRect(x, y, 1, 1);
             c.fill();
         }
     
