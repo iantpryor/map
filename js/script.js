@@ -1,4 +1,4 @@
-var canvas = document.getElementById("mapCanvas");
+var canvas = document.getElementById("mapcanvas");
 var c = canvas.getContext("2d");
 var myTimer;
 
