@@ -46,6 +46,6 @@ document.getElementsByTagName('head')[0].appendChild(script);
             c.fill();
         }
     
-        $("#startbtn").click(function(){ dynamic=10; myTimer=setInterval(loop,10); });
+        $("#startbtn").click(function(){ dynamic=10; myTimer=setInterval(loop,1); });
     }
 })(window, document, undefined);
