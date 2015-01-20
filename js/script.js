@@ -27,7 +27,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
             }
     
             // clear the canvas for this loop's animation
-            c.clearRect(0, 0, canvas.width, canvas.height);
+            //c.clearRect(0, 0, canvas.width, canvas.height);
             c.fillStyle = '#87CEEB';
     
             // draw
