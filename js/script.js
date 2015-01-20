@@ -8,23 +8,29 @@ document.getElementsByTagName('head')[0].appendChild(script);
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
         var myTimer;
+        var blockSize = 10;
     
         // set the dynamic outside the loop
-        var dynamic = 10;
+        var it1 = -1;
+        var it2 = -1
     
         //loop function
         function loop() {
+            it1 = it1+1
+            if(it1 % 96 == 0){
+                it2 = it2+1
+            }
     
             // change dynamic
             //dynamic = dynamic * 1.1;
-            x = dynamic;
-            y = dynamic;
+            x = it1*blockSize;
+            y = it2*blockSize;
             
             //if we've reached the end, change direction
             
         
             // stop the the animation if it runs out-of-canvas
-            if (x > canvas.width || y > canvas.height) {
+            if (it2 > 54) {
                 //c.clearRect(0, 0, canvas.width, canvas.height);
                 clearInterval(myTimer);
             }
