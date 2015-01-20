@@ -8,8 +8,10 @@
     var b = document.getElementById("startbtn").onclick = function() {
       alert("button was clicked");
       for(i=0; i<100; i++){
-        ctx.fillStyle = "#FF0000";
-        ctx.fillRect(i, 50, 50, 50);
+        setTimeout(function(){
+          ctx.fillStyle = "#FF0000";
+          ctx.fillRect(i, 50, 50, 50);
+        },100);
         
       }
     };
