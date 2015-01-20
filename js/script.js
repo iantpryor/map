@@ -12,13 +12,14 @@ document.getElementsByTagName('head')[0].appendChild(script);
     
         // set the dynamic outside the loop
         var it1 = -1;
-        var it2 = -1
+        var it2 = -1;
     
         //loop function
         function loop() {
-            it1 = it1+1
+            it1 = it1+1;
             if(it1 % 96 == 0){
-                it2 = it2+1
+                it1 = 0;
+                it2 = it2+1;
             }
     
             // change dynamic
