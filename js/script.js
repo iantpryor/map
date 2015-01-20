@@ -21,7 +21,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
             y = dynamic;
             
             //if we've reached the end, change direction
-            if(x
+            
         
             // stop the the animation if it runs out-of-canvas
             if (x > canvas.width || y > canvas.height) {
