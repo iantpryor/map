@@ -22,7 +22,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
         
             // stop the the animation if it runs out-of-canvas
             if (x > canvas.width || y > canvas.height) {
-                c.clearRect(0, 0, canvas.width, canvas.height);
+                //c.clearRect(0, 0, canvas.width, canvas.height);
                 clearInterval(myTimer);
             }
     
