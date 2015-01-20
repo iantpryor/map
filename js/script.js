@@ -42,10 +42,10 @@ document.getElementsByTagName('head')[0].appendChild(script);
     
             // draw
             c.beginPath();
-            c.fillRect(x, y, 10, 10);
+            c.fillRect(x, y, 9, 9);
             c.fill();
         }
     
-        $("#startbtn").click(function(){ dynamic=10; myTimer=setInterval(loop,20); });
+        $("#startbtn").click(function(){ dynamic=10; myTimer=setInterval(loop,10); });
     }
 })(window, document, undefined);
