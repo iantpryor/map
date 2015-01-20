@@ -16,9 +16,12 @@ document.getElementsByTagName('head')[0].appendChild(script);
         function loop() {
     
             // change dynamic
-            dynamic = dynamic * 1.1;
+            //dynamic = dynamic * 1.1;
             x = dynamic;
-            y = dynamic * 1.2;
+            y = dynamic;
+            
+            //if we've reached the end, change direction
+            if(x
         
             // stop the the animation if it runs out-of-canvas
             if (x > canvas.width || y > canvas.height) {
