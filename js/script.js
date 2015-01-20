@@ -35,7 +35,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
     
             // draw
             c.beginPath();
-            c.drawRect(x, y, 10, 10);
+            c.fillRect(x, y, 10, 10);
             c.fill();
         }
     
