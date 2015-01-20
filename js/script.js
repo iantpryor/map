@@ -17,7 +17,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
         //loop function
         function loop() {
             it1 = it1+1;
-            if(it1 % 960 == 0){
+            if(it1 % (canvas.width/blockSize) == 0){
                 it1 = 0;
                 it2 = it2+1;
             }
@@ -31,7 +31,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
             
         
             // stop the the animation if it runs out-of-canvas
-            if (it2 > 540) {
+            if (it2 > (canvas.height/blockSize)) {
                 //c.clearRect(0, 0, canvas.width, canvas.height);
                 clearInterval(myTimer);
                 alert("done");
