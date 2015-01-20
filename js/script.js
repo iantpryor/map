@@ -24,7 +24,6 @@ document.getElementsByTagName('head')[0].appendChild(script);
             if (x > canvas.width || y > canvas.height) {
                 c.clearRect(0, 0, canvas.width, canvas.height);
                 clearInterval(myTimer);
-                alert("animation done!");
             }
     
             // clear the canvas for this loop's animation
