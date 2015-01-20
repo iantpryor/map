@@ -35,7 +35,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
     
             // draw
             c.beginPath();
-            c.arc(x, y, 10, 0, Math.PI * 2, false);
+            c.drawRect(x, y, 10, 10);
             c.fill();
         }
     
