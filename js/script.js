@@ -34,6 +34,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
             if (it2 > 54) {
                 //c.clearRect(0, 0, canvas.width, canvas.height);
                 clearInterval(myTimer);
+                alert("done");
             }
     
             // clear the canvas for this loop's animation
