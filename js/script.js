@@ -5,9 +5,13 @@
     c.width = 960;
     c.height = 540;
     var ctx = c.getContext("2d");
-    for(i=0; i<100; i++){
-      ctx.fillStyle = "#FF0000";
-      ctx.fillRect(i, 50, 50, 50);
-    }
+    var b = document.getElementById("startbtn").onclick = function() {
+      alert("button was clicked");
+      for(i=0; i<100; i++){
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(i, 50, 50, 50);
+        
+      }
+    };
   }
 })(window, document, undefined);
