@@ -70,12 +70,16 @@
                             case 4:
                                 break;
                             case 5:
+                                map[i][j] = 1;
                                 break;
                             case 6:
+                                map[i][j] =1;
                                 break;
                             case 7:
+                                map[i][j] =1;
                                 break;
                             case 8:
+                                map[i][j] = 1;
                                 break;
                             default:
                                 map[i][j] = 0;
@@ -89,6 +93,9 @@
                 for(var j = 0; j< 540; j++){
                     if(map[i][j] == 1){
                         c.fillStyle = '#87CEEB';
+                        c.fillRect(i,j,1,1);
+                    }else {
+                        c.fillStyle = '#FFFFFF';
                         c.fillRect(i,j,1,1);
                     }
                 }
