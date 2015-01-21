@@ -34,7 +34,10 @@ document.getElementsByTagName('head')[0].appendChild(script);
             for(var i = 0; i < 960; i++) {
                 for(var j = 0; j< 540; j++){
                     if(map[i][j]) == 1){
-                        
+                        c.fillStyle = '#87CEEB';
+                        c.beginPath();
+                        c.fillRect(i,j,1,1);
+                        c.fill();
                     }
                 }
             }
