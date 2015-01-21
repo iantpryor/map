@@ -66,12 +66,14 @@
                 for(var i = 0; i< 960; i++) {
                     for(var j = 0; j < 540; j++){
                         var nc = ncount(i,j);
-                        if(nc >= 4 && map[i][j] == 1){
-                            map[i][j] = 1;
-                        } else if(nc >= 5) {
-                            map[i][j] = 1;
-                        } else{
-                            map[i][j] = 0;
+                        switch(nc){
+                            case 4:
+                                break;
+                            case 5:
+                                map[i][j] = 1;
+                                break;
+                            default:
+                                map[i][j] = 0;
                         }
                     }
                 }
