@@ -67,10 +67,11 @@
                     for(var j = 0; j < 540; j++){
                         var nc = ncount(i,j);
                         if(nc >= 4 && map[i][j] == 1){
-                            map[i][j] == 1;
-                        }
-                        if(nc >= 5) {
-                            map[i][j] == 1;
+                            map[i][j] = 1;
+                        } else if(nc >= 5) {
+                            map[i][j] = 1;
+                        } else{
+                            map[i][j] = 0;
                         }
                     }
                 }
