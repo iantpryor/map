@@ -68,15 +68,16 @@
                         var nc = ncount(i,j);
                         switch(nc){
                             case 4:
+                                map[i][j] = 1;
                                 break;
                             case 5:
                                 map[i][j] = 1;
                                 break;
                             case 6:
-                                map[i][j] =1;
+                                map[i][j] = 1;
                                 break;
                             case 7:
-                                map[i][j] =1;
+                                map[i][j] = 1;
                                 break;
                             case 8:
                                 map[i][j] = 1;
