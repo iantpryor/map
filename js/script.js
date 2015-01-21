@@ -70,16 +70,12 @@
                             case 4:
                                 break;
                             case 5:
-                                map[i][j] = 1;
                                 break;
                             case 6:
-                                map[i][j] = 1;
                                 break;
                             case 7:
-                                map[i][j] = 1;
                                 break;
                             case 8:
-                                map[i][j] = 1;
                                 break;
                             default:
                                 map[i][j] = 0;
