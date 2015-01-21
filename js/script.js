@@ -18,29 +18,31 @@
             var j1 = j+1;
             var j2 = j-1;
             var neighbors = 0;
-            if(map[i1][j1] == 1){
-                neighbors++;
-            }
-            if(map[i][j1] == 1){
-                neighbors++;
-            }
-            if(map[i2][j1] == 1){
-                neighbors++;
-            }
-            if(map[i1][j] == 1){
-                neighbors++;
-            }
-            if(map[i2][j] == 1){
-                neighbors++;
-            }
-            if(map[i1][j2] == 1){
-                neighbors++;
-            }
-            if(map[i][j2] == 1){
-                neighbors++;
-            }
-            if(map[i2][j2] == 1){
-                neighbors++;
+            if(i1 < 960 && i2 >=0 && j1 < 540 && j2 >=0){
+                if(map[i1][j1] == 1){
+                    neighbors++;
+                }
+                if(map[i][j1] == 1){
+                    neighbors++;
+                }
+                if(map[i2][j1] == 1){
+                    neighbors++;
+                }
+                if(map[i1][j] == 1){
+                    neighbors++;
+                }
+                if(map[i2][j] == 1){
+                    neighbors++;
+                }
+                if(map[i1][j2] == 1){
+                    neighbors++;
+                }
+                if(map[i][j2] == 1){
+                    neighbors++;
+                }
+                if(map[i2][j2] == 1){
+                    neighbors++;
+                }
             }
             return neighbors;
         }
