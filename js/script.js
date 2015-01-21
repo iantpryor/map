@@ -84,6 +84,7 @@
                 }
             }
             it++;
+            document.getElementById("iter").innerHTML = it;
         }
     }
 })(window, document, undefined);
