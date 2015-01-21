@@ -1,32 +1,33 @@
 (function(window, document, undefined) { 
     window.onload = init;
     function init() {
-        //create the map of values
+        
+        //create an empty map
         var map = new Array(960);
         for(var i = 0; i < 960; i++) {
             map[i] = new Array(540);
         }
         
-        //fill the values
-        for(var i = 0; i< 960; i++) {
-            for(var j = 0; j < 540; j++) {
-                map[i][j] = 1;
-            }
-        }
-        
+        //get the canvas
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
-        var myTimer;
-        var blockSize = 2;
-    
-        // set the dynamic outside the loop
-        var it1 = -1;
-        var it2 = -1;
         
+        //when we click, assign values and then paint
         document.getElementById("startbtn").onclick = paint;
-    
-        //paint the map
         function paint() {
+            
+            //fill the values
+            for(var i = 0; i< 960; i++) {
+                for(var j = 0; j < 540; j++) {
+                    if(Math.random() < .45){
+                        map[i][j] = 1;
+                    } else {
+                        map[i][j] = 0;
+                    }
+                }
+            }
+            
+            //paint the map
             for(var i = 0; i < 960; i++) {
                 for(var j = 0; j< 540; j++){
                     if(map[i][j] == 1){
