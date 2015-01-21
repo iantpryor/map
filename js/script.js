@@ -5,6 +5,19 @@ document.getElementsByTagName('head')[0].appendChild(script);
 (function(window, document, undefined) { 
     window.onload = init;
     function init() {
+        //create the map of values
+        var map = new Array(960);
+        for(var i = 0; i < 960; i++) {
+            map[i] = new Array(540);
+        }
+        
+        //fill the values
+        for(var i = 0; i< 960; i++) {
+            for(var j = 0; j < 540; j++) {
+                map[i][j] = 1;
+            }
+        }
+        
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
         var myTimer;
@@ -13,40 +26,18 @@ document.getElementsByTagName('head')[0].appendChild(script);
         // set the dynamic outside the loop
         var it1 = -1;
         var it2 = -1;
-    
-        //loop function
-        function loop() {
-            it1 = it1+1;
-            if(it1 % (canvas.width/blockSize) == 0){
-                it1 = 0;
-                it2 = it2+1;
-            }
-    
-            // change dynamic
-            //dynamic = dynamic * 1.1;
-            x = it1*blockSize;
-            y = it2*blockSize;
-            
-            //if we've reached the end, change direction
-            
         
-            // stop the the animation if it runs out-of-canvas
-            if (it2 > (canvas.height/blockSize)) {
-                //c.clearRect(0, 0, canvas.width, canvas.height);
-                clearInterval(myTimer);
-                alert("done");
+        document.getElementById("startbtn").onclick = paint;
+    
+        //paint the map
+        function paint() {
+            for(var i = 0; i < 960; i++) {
+                for(var j = 0; j< 540; j++){
+                    if(map[i][j]) == 1){
+                        
+                    }
+                }
             }
-    
-            // clear the canvas for this loop's animation
-            //c.clearRect(0, 0, canvas.width, canvas.height);
-            c.fillStyle = '#87CEEB';
-    
-            // draw
-            c.beginPath();
-            c.fillRect(x, y, 1, 1);
-            c.fill();
         }
-    
-        $("#startbtn").click(function(){ dynamic=10; myTimer=setInterval(loop,1); });
     }
 })(window, document, undefined);
