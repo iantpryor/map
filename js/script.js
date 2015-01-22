@@ -96,10 +96,10 @@
             for(var i = 0; i < 960; i++) {
                 for(var j = 0; j< 540; j++){
                     if(map[i][j] == 1){
-                        c.fillStyle = "#FFFFFF";
+                        c.fillStyle = "#000000";
                         c.fillRect(i, j, 1, 1);
                     }else {
-                        c.fillStyle = "#000000";
+                        c.fillStyle = "#FFFFFF";
                         c.fillRect(i, j, 1, 1);
                     }
                 }
