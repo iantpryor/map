@@ -11,19 +11,8 @@
         //get the canvas
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
-        
-        var imgData = c.createImageData(1, 1);
-
-        var i;
-        for (i = 0; i < imgData.data.length; i += 4) {
-            imgData.data[i+0] = 255;
-            imgData.data[i+1] = 0;
-            imgData.data[i+2] = 0;
-            imgData.data[i+3] = 255;
-        }
-
-
-        
+       
+       //functions for finding how many neighbors are walls
         function ncount(i,j) {
             var i1 = i+1;
             var i2 = i-1;
@@ -55,24 +44,17 @@
                 if(map[i2][j2] == 1){
                     neighbors++;
                 }
+            }else{
+                neighbors = 4;
             }
             return neighbors;
         }
         
         //when we click, assign values and then paint
-        document.getElementById("startbtn").onclick = test;
-        function test() {
-            for(j = 0; j <canvas.width; j++){
-                for(k = 0; k<canvas.height; k++){
-                    if(Math.random() < .45){
-                        c.putImageData(imgData, j, k);
-                    }
-                }
-            }
-        }
-        
+        document.getElementById("startbtn").onclick = paint;
         var it = 1;
         function paint() {
+            document.getElementById("iter").innerHTML = it;
             if(it == 1){
                 //fill the values
                 for(var i = 0; i< 960; i++) {
@@ -110,20 +92,20 @@
                 }
             }
             
-            
-            
             //paint the map
             for(var i = 0; i < 960; i++) {
                 for(var j = 0; j< 540; j++){
                     if(map[i][j] == 1){
-                        c.putImageData(imgData, i, j);
+                        c.fillStyle = "#FFFFFF";
+                        c.fillRect(i, j, 1, 1);
                     }else {
-                        
+                        c.fillStyle = "#000000";
+                        c.fillRect(i, j, 1, 1);
                     }
                 }
             }
             it++;
-            document.getElementById("iter").innerHTML = it;
+            
         }
     }
 })(window, document, undefined);
