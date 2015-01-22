@@ -11,7 +11,6 @@
         //get the canvas
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
-        c.translate(0.5, 0.5);
         
         var imgData = c.createImageData(1, 1);
 
