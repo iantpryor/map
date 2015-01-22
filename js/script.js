@@ -91,19 +91,23 @@
                 }
             }
             
-            d[0] = 255;
-            d[1] = 255;
-            d[2] = 255;
-            d[3] = 1;
+            
             
             //paint the map
             for(var i = 0; i < 960; i++) {
                 for(var j = 0; j< 540; j++){
                     if(map[i][j] == 1){
+                        d[0] = 0;
+                        d[1] = 0;
+                        d[2] = 0;
+                        d[3] = 1;
                         c.putImageData(id, i, j);
                     }else {
-                        c.fillStyle = '#FFFFFF';
-                        c.fillRect(i + 0.5,j + 0.5,1,1);
+                        d[0] = 255;
+                        d[1] = 255;
+                        d[2] = 255;
+                        d[3] = 1;
+                        c.putImageData(id, i, j);
                     }
                 }
             }
