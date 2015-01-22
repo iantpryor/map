@@ -64,7 +64,9 @@
         function test() {
             for(j = 0; j <canvas.width; j++){
                 for(k = 0; k<canvas.height; k++){
-                    c.putImageData(imgData, j, k);
+                    if(Math.rando() < .45){
+                        c.putImageData(imgData, j, k);
+                    }
                 }
             }
         }
