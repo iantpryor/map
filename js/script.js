@@ -12,12 +12,17 @@
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
         
-        var id = c.createImageData(1,1);
-        var d = id.data;
-        d[0]   = 0;
-        d[1]   = 0;
-        d[2]   = 0;
-        d[3]   = 1;
+        var imgData = c.createImageData(1, 1);
+
+        var i;
+        for (i = 0; i < imgData.data.length; i += 4) {
+            imgData.data[i+0] = 255;
+            imgData.data[i+1] = 0;
+            imgData.data[i+2] = 0;
+            imgData.data[i+3] = 255;
+        }
+
+
         
         function ncount(i,j) {
             var i1 = i+1;
@@ -101,7 +106,7 @@
             for(var i = 0; i < 960; i++) {
                 for(var j = 0; j< 540; j++){
                     if(map[i][j] == 1){
-                        c.putImageData(id, i, j);
+                        c.putImageData(imgData, i, j);
                     }else {
                         
                     }
