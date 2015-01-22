@@ -12,6 +12,9 @@
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
         
+        var id = c.createImageData(1,1);
+        var d = id.data;
+        
         function ncount(i,j) {
             var i1 = i+1;
             var i2 = i-1;
@@ -87,16 +90,17 @@
                     }
                 }
             }
-            var idata;
-            idata[0] = 176; 
-            idata[1] = 23;
-            idata[2] = 31;
-            idata[3] = 1;
+            
+            d[0] = 255;
+            d[1] = 255;
+            d[2] = 255;
+            d[3] = 1;
+            
             //paint the map
             for(var i = 0; i < 960; i++) {
                 for(var j = 0; j< 540; j++){
                     if(map[i][j] == 1){
-                        c.putImageData(idata, i, j);
+                        c.putImageData(id, i, j);
                     }else {
                         c.fillStyle = '#FFFFFF';
                         c.fillRect(i + 0.5,j + 0.5,1,1);
