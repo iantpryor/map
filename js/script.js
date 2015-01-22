@@ -60,7 +60,15 @@
         }
         
         //when we click, assign values and then paint
-        document.getElementById("startbtn").onclick = paint;
+        document.getElementById("startbtn").onclick = test;
+        function test() {
+            for(j = 0; j <c.width; j++){
+                for(k = 0; k<c.height; k++){
+                    ctx.putImageData(imgData, j, k);
+                }
+            }
+        }
+        
         var it = 1;
         function paint() {
             if(it == 1){
