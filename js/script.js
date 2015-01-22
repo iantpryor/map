@@ -62,9 +62,9 @@
         //when we click, assign values and then paint
         document.getElementById("startbtn").onclick = test;
         function test() {
-            for(j = 0; j <c.width; j++){
-                for(k = 0; k<c.height; k++){
-                    ctx.putImageData(imgData, j, k);
+            for(j = 0; j <canvas.width; j++){
+                for(k = 0; k<canvas.height; k++){
+                    c.putImageData(imgData, j, k);
                 }
             }
         }
