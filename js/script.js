@@ -11,6 +11,7 @@
         //get the canvas
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
+        c.imageSmoothingEnabled = false;
         
         var imgData = c.createImageData(1, 1);
 
