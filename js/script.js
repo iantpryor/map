@@ -87,13 +87,16 @@
                     }
                 }
             }
-            
+            var idata;
+            idata[0] = 176; 
+            idata[1] = 23;
+            idata[2] = 31;
+            idata[3] = 1;
             //paint the map
             for(var i = 0; i < 960; i++) {
                 for(var j = 0; j< 540; j++){
                     if(map[i][j] == 1){
-                        c.fillStyle = '#87CEEB';
-                        c.fillRect(i,j,1,1);
+                        c.putImageData(idata, i, j);
                     }else {
                         c.fillStyle = '#FFFFFF';
                         c.fillRect(i + 0.5,j + 0.5,1,1);
