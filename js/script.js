@@ -96,7 +96,7 @@
                         c.fillRect(i,j,1,1);
                     }else {
                         c.fillStyle = '#FFFFFF';
-                        c.fillRect(i,j,1,1);
+                        c.fillRect(i + 0.5,j + 0.5,1,1);
                     }
                 }
             }
