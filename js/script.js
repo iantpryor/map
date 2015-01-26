@@ -84,7 +84,7 @@
                                     map[i][j] = 0;
                                 }
                             } else {
-                                if(nc <= 4) {
+                                if(nc <= 3) {
                                     map[i][j] = 0;
                                 }
                             } 
