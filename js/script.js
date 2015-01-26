@@ -1,16 +1,25 @@
 (function(window, document, undefined) { 
     window.onload = init;
     function init() {
-        
-        //create an empty map
-        var map = new Array(960);
-        for(var i = 0; i < 960; i++) {
-            map[i] = new Array(540);
-        }
-        
+    
         //get the canvas
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
+        
+        //create an empty map
+        var map = new Array(canvas.width);
+        for(var i = 0; i < canvas.width; i++) {
+            map[i] = new Array(canvas.height);
+        }
+        
+        //function for finding if one point is a wall
+        function iswall(i,j){
+            if(i1 < 960 || i2 >=0 || j1 < 540 || j2 >=0){
+                return 1;
+            }else{
+                return map[i][j];
+            }
+        }
        
        //functions for finding how many neighbors are walls
         function ncount(i,j) {
@@ -19,33 +28,29 @@
             var j1 = j+1;
             var j2 = j-1;
             var neighbors = 0;
-            if(i1 < 960 && i2 >=0 && j1 < 540 && j2 >=0){
-                if(map[i1][j1] == 1){
-                    neighbors++;
-                }
-                if(map[i][j1] == 1){
-                    neighbors++;
-                }
-                if(map[i2][j1] == 1){
-                    neighbors++;
-                }
-                if(map[i1][j] == 1){
-                    neighbors++;
-                }
-                if(map[i2][j] == 1){
-                    neighbors++;
-                }
-                if(map[i1][j2] == 1){
-                    neighbors++;
-                }
-                if(map[i][j2] == 1){
-                    neighbors++;
-                }
-                if(map[i2][j2] == 1){
-                    neighbors++;
-                }
-            }else{
-                neighbors = 4;
+            if(iswall(i1,j1) == 1){
+                neighbors++;
+            }
+            if(iswall(i,j1) == 1){
+                neighbors++;
+            }
+            if(iswall(i2,j1) == 1){
+                neighbors++;
+            }
+            if(iswall(i1,j) == 1){
+                neighbors++;
+            }
+            if(iswall(i2,j) == 1){
+                neighbors++;
+            }
+            if(iswall(i1,j2) == 1){
+                neighbors++;
+            }
+            if(iswall(i,j2) == 1){
+                neighbors++;
+            }
+            if(iswall(i2,j2) == 1){
+                neighbors++;
             }
             return neighbors;
         }
