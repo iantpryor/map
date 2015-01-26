@@ -5,16 +5,18 @@
         //get the canvas
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
+        var width = canvas.width;
+        var height = canvas.height;
         
         //create an empty map
-        var map = new Array(canvas.width);
-        for(var i = 0; i < canvas.width; i++) {
-            map[i] = new Array(canvas.height);
+        var map = new Array(width);
+        for(var i = 0; i < width; i++) {
+            map[i] = new Array(height);
         }
         
         //function for finding if one point is a wall
         function iswall(i,j) {
-            if(i >= canvas.width || i < 0 || j >= canvas.height || j < 0) {
+            if(i >= width || i < 0 || j >= height || j < 0) {
                 return 1;
             }else{
                 return map[i][j];
@@ -63,8 +65,8 @@
             for(var it = 0; it < 8; it++) {
                 if(it == 0) {
                     //fill random values for the first iteration
-                    for(var i = 0; i < canvas.width; i++) {
-                        for(var j = 0; j < canvas.height; j++) {
+                    for(var i = 0; i < width; i++) {
+                        for(var j = 0; j < height; j++) {
                             if(Math.random() < .40) {
                                 map[i][j] = 1;
                             } else {
@@ -74,8 +76,8 @@
                     }
                 } else {
                     //on subsequent iterations, create
-                    for(var i = 0; i < canvas.width; i++) {
-                        for(var j = 0; j < canvas.height; j++) {
+                    for(var i = 0; i < width; i++) {
+                        for(var j = 0; j < height; j++) {
                             var nc = ncount(i,j);
                             if(it <= 4) {
                                 if(nc >= 5 || nc <= 2) {
@@ -94,8 +96,8 @@
             }
             
             //paint the map
-            for(var i = 0; i < canvas.width; i++) {
-                for(var j = 0; j < canvas.height; j++) {
+            for(var i = 0; i < width; i++) {
+                for(var j = 0; j < height; j++) {
                     if(map[i][j] == 1) {
                         c.fillStyle = "#000000";
                         c.fillRect(i, j, 1, 1);
