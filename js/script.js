@@ -64,7 +64,7 @@
                 //fill the values
                 for(var i = 0; i< canvas.width; i++) {
                     for(var j = 0; j < canvas.height; j++) {
-                        if(Math.random() < .45){
+                        if(Math.random() < .40){
                             map[i][j] = 1;
                         } else {
                             map[i][j] = 0;
@@ -75,23 +75,10 @@
                 for(var i = 0; i< canvas.width; i++) {
                     for(var j = 0; j < canvas.height; j++){
                         var nc = ncount(i,j);
-                        switch(nc){
-                            case 4:
-                                break;
-                            case 5:
-                                map[i][j] = 1;
-                                break;
-                            case 6:
-                                map[i][j] = 1;
-                                break;
-                            case 7:
-                                map[i][j] = 1;
-                                break;
-                            case 8:
-                                map[i][j] = 1;
-                                break;
-                            default:
-                                map[i][j] = 0;
+                        if(nc >= 5 || nc <=2){
+                            map[i][j] = 1;
+                        }else{
+                            map[i][j] = 0;
                         }
                     }
                 }
