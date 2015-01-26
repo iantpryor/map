@@ -5,8 +5,8 @@
         //get the canvas
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
-        var width = canvas.width;
-        var height = canvas.height;
+        var width = 160;
+        var height = 90;
         
         //create an empty map
         var map = new Array(width);
@@ -96,14 +96,14 @@
             }
             
             //paint the map
-            for(var i = 0; i < width; i++) {
-                for(var j = 0; j < height; j++) {
+            for(var i = 0; i < width; i+=4) {
+                for(var j = 0; j < height; j+=4) {
                     if(map[i][j] == 1) {
                         c.fillStyle = "#000000";
-                        c.fillRect(i, j, 1, 1);
+                        c.fillRect(i, j, 4, 4);
                     } else {
                         c.fillStyle = "#FFFFFF";
-                        c.fillRect(i, j, 1, 1);
+                        c.fillRect(i, j, 4, 4);
                     }
                 }
             }
