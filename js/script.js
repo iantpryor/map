@@ -62,7 +62,7 @@
         var it = 1;
         function paint() {
             //generation interations
-            for(var it = 0; it < 8; it++) {
+            for(var it = 0; it < 7; it++) {
                 if(it == 0) {
                     //fill random values for the first iteration
                     for(var i = 0; i < width; i++) {
@@ -86,9 +86,7 @@
                                     map[i][j] = 0;
                                 }
                             } else {
-                                if(nc >=5) {
-                                    map[i][j] = 1;
-                                } else {
+                                if(nc <= 3){
                                     map[i][j] = 0;
                                 }
                             } 
