@@ -14,7 +14,7 @@
         
         //function for finding if one point is a wall
         function iswall(i,j){
-            if(i1 < canvas.width || i2 >=0 || j1 < canvas.height || j2 >=0){
+            if(i1 > canvas.width || i2 <0 || j1 > canvas.height || j2 <0){
                 return 1;
             }else{
                 return map[i][j];
