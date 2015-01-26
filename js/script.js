@@ -77,7 +77,6 @@
                     for(var i = 0; i < canvas.width; i++) {
                         for(var j = 0; j < canvas.height; j++) {
                             var nc = ncount(i,j);
-                            //for the first 4 iterations, 
                             if(it <= 4) {
                                 if(nc >= 5 || nc <= 2) {
                                     map[i][j] = 1;
@@ -88,7 +87,7 @@
                                 if(nc <= 4) {
                                     map[i][j] = 0;
                                 }
-                            } //after the first 4 iterations
+                            } 
                         }
                     }
                 }
