@@ -59,32 +59,36 @@
         document.getElementById("startbtn").onclick = paint;
         var it = 1;
         function paint() {
-            document.getElementById("iter").innerHTML = it;
-            if(it == 1) {
-                //fill the values
-                for(var i = 0; i < canvas.width; i++) {
-                    for(var j = 0; j < canvas.height; j++) {
-                        if(Math.random() < .40) {
-                            map[i][j] = 1;
-                        } else {
-                            map[i][j] = 0;
+            //generation interations
+            for(var it = 0; it < 8; it++) {
+                if(it == 0) {
+                    //fill random values for the first iteration
+                    for(var i = 0; i < canvas.width; i++) {
+                        for(var j = 0; j < canvas.height; j++) {
+                            if(Math.random() < .40) {
+                                map[i][j] = 1;
+                            } else {
+                                map[i][j] = 0;
+                            }
                         }
                     }
-                }
-            } else {
-                for(var i = 0; i < canvas.width; i++) {
-                    for(var j = 0; j < canvas.height; j++) {
-                        var nc = ncount(i,j);
-                        if(it <= 4) {
-                            if(nc >= 5 || nc <= 2) {
-                                map[i][j] = 1;
-                            }else{
-                                map[i][j] = 0;
-                            }
-                        }else{
-                            if(nc <4) {
-                                map[i][j] = 0;
-                            }
+                } else {
+                    //on subsequent iterations, create
+                    for(var i = 0; i < canvas.width; i++) {
+                        for(var j = 0; j < canvas.height; j++) {
+                            var nc = ncount(i,j);
+                            //for the first 4 iterations, 
+                            if(it <= 4) {
+                                if(nc >= 5 || nc <= 2) {
+                                    map[i][j] = 1;
+                                } else {
+                                    map[i][j] = 0;
+                                }
+                            } else {
+                                if(nc <= 4) {
+                                    map[i][j] = 0;
+                                }
+                            } //after the first 4 iterations
                         }
                     }
                 }
@@ -96,13 +100,12 @@
                     if(map[i][j] == 1) {
                         c.fillStyle = "#000000";
                         c.fillRect(i, j, 1, 1);
-                    }else {
+                    } else {
                         c.fillStyle = "#FFFFFF";
                         c.fillRect(i, j, 1, 1);
                     }
                 }
             }
-            it++;
         }
     }
 })(window, document, undefined);
