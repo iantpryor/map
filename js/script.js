@@ -62,7 +62,7 @@
             document.getElementById("iter").innerHTML = it;
             if(it == 1){
                 //fill the values
-                for(var i = 0; i< canvas.width; i++) {
+                for(var i = 0; i < canvas.width; i++) {
                     for(var j = 0; j < canvas.height; j++) {
                         if(Math.random() < .40){
                             map[i][j] = 1;
@@ -72,7 +72,7 @@
                     }
                 }
             } else {
-                for(var i = 0; i< canvas.width; i++) {
+                for(var i = 0; i < canvas.width; i++) {
                     for(var j = 0; j < canvas.height; j++){
                         var nc = ncount(i,j);
                         if(it<=4){
