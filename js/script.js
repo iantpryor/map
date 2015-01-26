@@ -14,7 +14,7 @@
         
         //function for finding if one point is a wall
         function iswall(i,j){
-            if(i1 < 960 || i2 >=0 || j1 < 540 || j2 >=0){
+            if(i1 < canvas.width || i2 >=0 || j1 < canvas.height || j2 >=0){
                 return 1;
             }else{
                 return map[i][j];
@@ -62,8 +62,8 @@
             document.getElementById("iter").innerHTML = it;
             if(it == 1){
                 //fill the values
-                for(var i = 0; i< 960; i++) {
-                    for(var j = 0; j < 540; j++) {
+                for(var i = 0; i< canvas.width; i++) {
+                    for(var j = 0; j < canvas.height; j++) {
                         if(Math.random() < .45){
                             map[i][j] = 1;
                         } else {
@@ -72,8 +72,8 @@
                     }
                 }
             } else {
-                for(var i = 0; i< 960; i++) {
-                    for(var j = 0; j < 540; j++){
+                for(var i = 0; i< canvas.width; i++) {
+                    for(var j = 0; j < canvas.height; j++){
                         var nc = ncount(i,j);
                         switch(nc){
                             case 4:
@@ -98,8 +98,8 @@
             }
             
             //paint the map
-            for(var i = 0; i < 960; i++) {
-                for(var j = 0; j< 540; j++){
+            for(var i = 0; i < canvas.width; i++) {
+                for(var j = 0; j< canvas.height; j++){
                     if(map[i][j] == 1){
                         c.fillStyle = "#000000";
                         c.fillRect(i, j, 1, 1);
