@@ -58,9 +58,9 @@
         }
         
         //when we click, assign values and then paint
-        document.getElementById("startbtn").onclick = paint;
+        document.getElementById("startbtn").onclick = gen1();
         var it = 1;
-        function paint() {
+        function gen1() {
             //generation interations
             for(var it = 0; it < 7; it++) {
                 if(it == 0) {
@@ -94,8 +94,10 @@
                     }
                 }
             }
-            
-            //paint the map
+            paint();
+        }
+        //paint the map
+        function paint() {
             for(var i = 0; i < width; i++) {
                 for(var j = 0; j < height; j++) {
                     if(map[i][j] == 1) {
