@@ -96,8 +96,8 @@
             }
             
             //paint the map
-            for(var i = 0; i < width; i+=4) {
-                for(var j = 0; j < height; j+=4) {
+            for(var i = 0; i < canvas.width; i+=4) {
+                for(var j = 0; j < canvas.height; j+=4) {
                     if(map[i][j] == 1) {
                         c.fillStyle = "#000000";
                         c.fillRect(i, j, 4, 4);
