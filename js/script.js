@@ -56,6 +56,21 @@
             return neighbors;
         }
         
+        //paint the map
+        function paint() {
+            for(var i = 0; i < width; i++) {
+                for(var j = 0; j < height; j++) {
+                    if(map[i][j] == 1) {
+                        c.fillStyle = "#000000";
+                        c.fillRect(i*4, j*4, 4, 4);
+                    } else {
+                        c.fillStyle = "#FFFFFF";
+                        c.fillRect(i*4, j*4, 4, 4);
+                    }
+                }
+            }
+        }
+        
         //when we click, assign values and then paint
         document.getElementById("startbtn").onclick = gen1();
         var it = 1;
@@ -93,21 +108,7 @@
                     }
                 }
             }
-            paint;
-        }
-        //paint the map
-        function paint() {
-            for(var i = 0; i < width; i++) {
-                for(var j = 0; j < height; j++) {
-                    if(map[i][j] == 1) {
-                        c.fillStyle = "#000000";
-                        c.fillRect(i*4, j*4, 4, 4);
-                    } else {
-                        c.fillStyle = "#FFFFFF";
-                        c.fillRect(i*4, j*4, 4, 4);
-                    }
-                }
-            }
+            paint();
         }
     }
 })(window, document, undefined);
