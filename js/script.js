@@ -104,7 +104,7 @@
                         for(var j = 0; j < height; j+=blockSize) {
                             var nc = ncount(i, j, blockSize);
                             if(it <= 4) {
-                                if(nc >= 5 || nc <= 3) {
+                                if(nc >= 5 || nc <= 2) {
                                     block(i, j, blockSize, 1);
                                 } else {
                                     block(i, j, blockSize, 0);
