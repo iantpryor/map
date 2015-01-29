@@ -24,11 +24,11 @@
         }
        
        //functions for finding how many neighbors are walls
-        function ncount(i,j) {
-            var i1 = i+blockSize;
-            var i2 = i-blockSize;
-            var j1 = j+blockSize;
-            var j2 = j-blockSize;
+        function ncount(i,j,bSize) {
+            var i1 = i+bSize;
+            var i2 = i-bSize;
+            var j1 = j+bSize;
+            var j2 = j-bSize;
             var neighbors = 0;
             if(iswall(i1,j1) == 1) {
                 neighbors++;
@@ -73,9 +73,9 @@
         }
         
         //make a block using a point as upper left
-        function block(i, j, type) {
-            for(var b1 = 0; b1 < blockSize; b1++) {
-                for(var b2 = 0; b2 < blockSize; b2++) {
+        function block(i, j, bSize, type) {
+            for(var b1 = 0; b1 < bSize; b1++) {
+                for(var b2 = 0; b2 < bSize; b2++) {
                     map[i + b1][j + b2] = type;
                 }
             }
@@ -92,9 +92,9 @@
                     for(var i = 0; i < width; i+= blockSize) {
                         for(var j = 0; j < height; j+= blockSize) {
                             if(Math.random() < .40) {
-                                block(i, j, 1);
+                                block(i, j, blockSize, 1);
                             } else {
-                                block(i, j, 0);
+                                block(i, j, blockSize, 0);
                             }
                         }
                     }
@@ -102,19 +102,34 @@
                     //on subsequent iterations, create
                     for(var i = 0; i < width; i+=blockSize) {
                         for(var j = 0; j < height; j+=blockSize) {
-                            var nc = ncount(i,j);
+                            var nc = ncount(i, j, blockSize);
                             if(it <= 4) {
                                 if(nc >= 5 || nc <= 2) {
-                                    block(i, j, 1);
+                                    block(i, j, blockSize, 1);
                                 } else {
-                                    block(i, j, 0);
+                                    block(i, j, blockSize, 0);
                                 }
                             } else {
                                 if(nc <= 3){
-                                    block(i, j, 0);
+                                    block(i, j, blockSize, 0);
                                 }
                             } 
                         }
+                    }
+                }
+            }
+            paint();
+        }
+        
+        document.getElementById("smoothbtn").onclick = smoothing;
+        function smoothing() {
+            for(var i =0; i < width; i++) {
+                for(var j = 0; j < height; j++) {
+                    var nc = ncount(i, j, 1);
+                    if(nc < 4) {
+                        block(i, j, 1, 0);
+                    }else if(nc > 4) {
+                        block(i, j, 1, 1);
                     }
                 }
             }
