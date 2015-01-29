@@ -72,7 +72,7 @@
         }
         
         //when we click, assign values and then paint
-        document.getElementById("startbtn").onclick = gen1();
+        document.getElementById("startbtn").onclick = gen1;
         var it = 1;
         function gen1() {
             //generation interations
@@ -108,7 +108,7 @@
                     }
                 }
             }
-            paint();
+            paint;
         }
     }
 })(window, document, undefined);
