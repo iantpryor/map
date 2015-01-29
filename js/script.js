@@ -108,7 +108,7 @@
                     }
                 }
             }
-            paint;
+            paint();
         }
     }
 })(window, document, undefined);
