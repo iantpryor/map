@@ -93,7 +93,6 @@
                         for(var j = 0; j < height; j+= blockSize) {
                             if(Math.random() < .40) {
                                 block(i, j, 1);
-                                }
                             } else {
                                 block(i, j, 0);
                             }
