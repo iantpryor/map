@@ -63,10 +63,10 @@
                 for(var j = 0; j < height; j++) {
                     if(map[i][j] == 1) {
                         c.fillStyle = "#000000";
-                        c.fillRect(i*4, j*4, 4, 4);
+                        c.fillRect(i, j, 1, 1);
                     } else {
                         c.fillStyle = "#FFFFFF";
-                        c.fillRect(i*4, j*4, 4, 4);
+                        c.fillRect(i, j, 1, 1);
                     }
                 }
             }
