@@ -141,13 +141,13 @@
             for(var i =0; i < width; i++) {
                 for(var j = 0; j < height; j++) {
                     var nc = ncount(i, j, 1);
-                    if(nc < 4) {
+                    if(nc <= 3) {
                         if(Math.random() < .70) {
                             block(i, j, 1, 0);
                         } else {
                             block(i, j, 1, 1);
                         }
-                    }else if(nc > 4) {
+                    }else if(nc >= 3 && nc < 7) {
                         if(Math.random() < .70) {
                             block(i, j, 1, 1);
                         } else {
