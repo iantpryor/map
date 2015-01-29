@@ -4,9 +4,9 @@
         //get the canvas
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
-        var width = 640;
-        var height = 360;
-        var blockSize = 4;
+        var width = 1280;
+        var height = 720;
+        var blockSize = 8;
         
         //create an empty map
         var map = new Array(width);
