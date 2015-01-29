@@ -4,8 +4,9 @@
         //get the canvas
         var canvas = document.getElementById("mapcanvas");
         var c = canvas.getContext("2d");
-        var width = 160;
-        var height = 90;
+        var width = 640;
+        var height = 360;
+        var blockSize = 4;
         
         //create an empty map
         var map = new Array(width);
@@ -24,10 +25,10 @@
        
        //functions for finding how many neighbors are walls
         function ncount(i,j) {
-            var i1 = i+1;
-            var i2 = i-1;
-            var j1 = j+1;
-            var j2 = j-1;
+            var i1 = i+blockSize;
+            var i2 = i-blockSize;
+            var j1 = j+blockSize;
+            var j2 = j-blockSize;
             var neighbors = 0;
             if(iswall(i1,j1) == 1) {
                 neighbors++;
@@ -71,6 +72,15 @@
             }
         }
         
+        //make a block using a point as upper left
+        function block(i, j, type) {
+            for(var b1 = 0; b1 < blockSize; b1++) {
+                for(var b2 = 0; b2 < blockSize; b2++) {
+                    map[i + b2][j + b2] = type;
+                }
+            }
+        }
+        
         //when we click, assign values and then paint
         document.getElementById("startbtn").onclick = gen1;
         var it = 1;
@@ -79,29 +89,30 @@
             for(var it = 0; it < 7; it++) {
                 if(it == 0) {
                     //fill random values for the first iteration
-                    for(var i = 0; i < width; i++) {
-                        for(var j = 0; j < height; j++) {
+                    for(var i = 0; i < width; i+= blockSize) {
+                        for(var j = 0; j < height; j+= blockSize) {
                             if(Math.random() < .40) {
-                                map[i][j] = 1;
+                                block(i, j, 1);
+                                }
                             } else {
-                                map[i][j] = 0;
+                                block(i, j, 0);
                             }
                         }
                     }
                 } else {
                     //on subsequent iterations, create
-                    for(var i = 0; i < width; i++) {
-                        for(var j = 0; j < height; j++) {
+                    for(var i = 0; i < width; i+=blockSize) {
+                        for(var j = 0; j < height; j+=blockSize) {
                             var nc = ncount(i,j);
                             if(it <= 4) {
                                 if(nc >= 5 || nc <= 2) {
-                                    map[i][j] = 1;
+                                    block(i, j, 1);
                                 } else {
-                                    map[i][j] = 0;
+                                    block(i, j, 0);
                                 }
                             } else {
                                 if(nc <= 3){
-                                    map[i][j] = 0;
+                                    block(i, j, 0);
                                 }
                             } 
                         }
