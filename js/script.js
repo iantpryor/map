@@ -91,7 +91,7 @@
                     //fill random values for the first iteration
                     for(var i = 0; i < width; i+= blockSize) {
                         for(var j = 0; j < height; j+= blockSize) {
-                            if(Math.random() < .40) {
+                            if(Math.random() < .30) {
                                 block(i, j, blockSize, 1);
                             } else {
                                 block(i, j, blockSize, 0);
