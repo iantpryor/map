@@ -76,7 +76,7 @@
         function block(i, j, type) {
             for(var b1 = 0; b1 < blockSize; b1++) {
                 for(var b2 = 0; b2 < blockSize; b2++) {
-                    map[i + b2][j + b2] = type;
+                    map[i + b1][j + b2] = type;
                 }
             }
         }
