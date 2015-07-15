@@ -1,5 +1,5 @@
 # map
-Creating a map in javascript based on automata
+Creates a map in javascript based on cellular automata
 
 Start by clicking Generate to get an overall shape
 
