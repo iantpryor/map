@@ -4,6 +4,6 @@ Creates a map in javascript based on cellular automata.  First cells are randoml
 
 ### How to Use
 
-*Start by clicking Generate to get an overall shape
+* Start by clicking Generate to get an overall shape
 
-*Alternate between rough and smooth to get a more realistic effect to your liking.
+* Alternate between rough and smooth to get a more realistic effect to your liking.
